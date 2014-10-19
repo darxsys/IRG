@@ -1,0 +1,717 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[utf8]{fer}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+
+\newcommand{\degree}{\ensuremath{^\circ}}
+\lstset{language=C++,captionpos=b,tabsize=3,commentstyle=\color{darkgreen},stringstyle=\color{red},showstringspaces=false,basicstyle=\footnotesize,emph={label},inputencoding=ansinew}
+
+\lstset{inputencoding=utf8}
+\lstset{extendedchars=true}
+\lstset{
+    literate=%
+    {ć}{{\'c}}1
+    {č}{{\v{c}}}1
+    {đ}{{\dj{}}}1
+    {š}{{\v{s}}}1
+    {ž}{{\v{z}}}1
+    {Ć}{{\'C}}1
+    {Č}{{\v{C}}}1
+    {Đ}{{\DJ{}}}1
+    {Š}{{\v{S}}}1
+    {Ž}{{\v{Z}}}1
+}
+% \lstset{}
+% \lstset{extendedchars=\true}
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+% \setlength\parindent{24pt}
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass \ (Dokumentacija)} % Top center header
+\rhead{\firstxmark} % Top right header
+% \rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{24pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Dokumentacija za laboratorijske vježbe} % Assignment title
+% \newcommand{\hmwkDueDate}{19.\  Lipanj,\ 2013} % Due date
+\newcommand{\hmwkClass}{Interaktivna računalna grafika} % Course/class
+% \newcommand{\hmwkClassTime}{10:30am} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{Željka Mihajlović, Marko Čupić} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Dario Pavlović} % Your name
+% \newcommand{\hmwkJMBAG}{0036455992}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+% \normalsize\vspace{0.1in}\small{\hmwkDueDate}\\
+% \hmwkDueDate10
+% \vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+\vspace{3in}
+}
+
+\voditelj{0036455992}
+\author{\textbf{\hmwkAuthorName}}
+% \hmwkJMBAG
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+\newpage
+\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+% Sve programske zadatke rješavao sam u programskom jeziku C++ na Linux-u.
+
+\chapter{Prvi ciklus vježbi - A varijanta}
+
+\section{Vježba 1}
+U ovoj laboratorijskoj vježbi bavili smo se matematičkim osnovama u računalnoj grafici. Naglasak je stavljen na operacije s vektorima, operacije s matricama te izračun baricentričnih koordinata. Zadatak je bio napisati program koji izračunava sve spomenute operacije. Moje rješenje strukturirano je kroz niz potprograma (isključivo proceduralno programiranje) koji se bave pojedinim zadacima i nisu međusobno ovisni. Podijelio sam ih na dvije skupine.
+\newline \indent
+Prvoj skupini pripadaju potprogrami za baratanje vektorima. Modelirao sam vektor kao običnu strukturu koja pohranjuje tri broja tipa \textit{float}.
+Struktura kojom sam modelirao vektor je:
+
+\begin{lstlisting}
+typedef struct {
+    float i;
+    float j;
+    float k;
+} Vector;
+
+\end{lstlisting}
+
+Potprogrami koji pripadaju ovoj skupini jesu:
+
+
+\begin{enumerate}
+
+
+\item \begin{lstlisting}
+void VectorInput(Vector* v)
+
+\end{lstlisting}
+Potprogram koji služi unosu koordinata vrha vektora sa standardnog ulaza. Prima obični pokazivač na već rezerviran memorijski prostor za vektor.
+
+\item \begin{lstlisting}
+void VectorPrint(Vector* v)
+
+\end{lstlisting}
+Potprogram za ispis komponenata vektora na standardni izlaz.
+
+\item \begin{lstlisting}
+void VectorAdd(Vector* v1, Vector* v2, Vector* v3)
+
+\end{lstlisting}
+Ovaj potprogram zbraja dva vektora zadana kao prva dva argumenta, a rezultat vraća
+
+\item \begin{lstlisting}
+double VectorScalarProduct(Vector* v1, Vector* v2)
+\end{lstlisting}
+Potprogram vraća skalarni produkt vektora zadanih kao argumenti.
+
+\item \begin{lstlisting}
+void VectorProduct(Vector* v1, Vector* v2, Vector *v3)
+\end{lstlisting}
+Vektorski produkt dva vektora kao rezultat ima vektor te ovaj program iz toga razloga rezultat sprema u treći argument koji prethodno mora pokazivati na rezerviran memorijski prostor.
+
+\item \begin{lstlisting}
+double VectorAbs(Vector* v)
+\end{lstlisting}
+Računanje apsolutne vrijednosti vektora.
+
+\item \begin{lstlisting}
+void VectorNormed(Vector* v1, Vector* v2)
+\end{lstlisting}
+
+Potprogram računa i vraća normirani vektor u smjeru prvog argumenta. Drugi argument, kao i prije, mora biti pokazivač koji pokazuje na rezervirani memorijski prostor.
+
+\end{enumerate}
+
+Druga skupina potprograma su potprogrami koji implementiraju operacije s matricama. Matrice sam modelirao kao obične pokazivače na element tipa \textit{double}. Potprogrami za baratanje matricama nabrojani su u nastavku.
+
+\begin{enumerate}
+\item \begin{lstlisting}
+void MatrixInput(float* matrix, int width, int height)
+\end{lstlisting}
+Slično kao kod vektora, potprogram služi učitavanju matrice zadanih dimenzija sa standardnog ulaza. Parametar \textit{matrix} treba biti prethodno rezerviran. 
+
+\item \begin{lstlisting}
+void MatrixAdd(float* matrix1, float* matrix2, int width, int height, float** M)
+\end{lstlisting}
+Potprogram koji služi zbrajanju matrica. Matrice moraju biti istih dimenzija, a one se zadaju kao parametri. Rezultat se pohranjuje u novo polje koje \textit{ne mora} biti prethodno inicijalizirano.
+
+\item \begin{lstlisting}
+void MatrixTranspose(float* M1, int width, int height, float** M2)
+\end{lstlisting}
+Transponiranje matrica obavlja se ovim potprogramom. Rezultat se vraća na jednak način kao i u prethodno spomenutom potprogramu.
+
+\item \begin{lstlisting}
+void MatrixMultiply(float* M1, int width1, int height1, float* M2, int width2, 
+	int height2, float** M3)
+\end{lstlisting}
+
+Kod množenja dviju matrica, potrebno je znati dimenzije obje matrice jer one određuju dimenzije ciljne matrice i kompatibilnost za množenje. Zato su parametri ovog potprograma obje matrice i njihove dimenzije. Potprogram ne provjerava ispravnost dimenzija. Ako su dimenzije nekompatibilne, doći će do pogreške.
+
+\item \begin{lstlisting}
+void MatrixInvert3x3(float *M1, float** M2)
+\end{lstlisting}
+Potprogram koji računa inverz matrice dimenzija 3x3 i vraća rezultat na isti načina kao i ostali. Treba napomenuti da potprogram nema mehanizam provjere ispravnosti dimenzija ili singularnosti matrice te će takvi parametri izazvati pogrešku.
+
+\item \begin{lstlisting}
+void MatrixPrint(float* M, int width, int height)
+\end{lstlisting}
+
+Potprogram za uredan ispis matrice M dimenzija zadanih kao ostala dva parametra.
+
+Pomoću ove dvije skupine potprograma implementirao sam podzadatke u ovoj vježbi. Za izračun baricentričnih koordinata, dovoljne su operacije s matricama. Sve ove funkcije spremljene su na način da se mogu ponovno koristiti preko sučelja (engl. \textit{header file}). Od ostalih struktura podataka, u ovom dijelu nisam koristio ništa.
+
+\end{enumerate}
+
+\section{Vježba 2}
+
+U vježbi dva, govorilo se općenito o homogenim koordinatama i ideji prelaska na iste. Također, obrađivala se tematika parametarske jednadžbe pravca u homogenom prostoru. Spomenulo se i ispitivanje odnosa točke i pravca. Glavni dio vježbe bio je iscrtavanje pravca na rasterskoj prikaznoj jedinici. Ideja je bila koristiti osnovni Bresenhamov postupak poboljšan da radi za sve moguće kuteve (početni je radio samo za iscrtavanje pravca s koeficijentom smjera između $0$ i $1$). Zadatak je bio, jasno, poboljšati dati Bresenhamov algoritam da radi za sve kuteve. Moje rješenje strukturirano je na sljedeći način:
+
+\begin{enumerate}
+\item \begin{lstlisting}
+void myDisplay()
+\end{lstlisting}
+
+\item \begin{lstlisting}
+void myReshape(int width, int height)
+\end{lstlisting}
+
+Gornje dvije funkcije standardne su u OpenGL programima i služe za različite inicijalizacije prilikom prvog pokretanja i kasnije prilikom manipulacija prozorom.
+
+\item \begin{lstlisting}
+void myMouse(int button, int state, int x, int y)
+\end{lstlisting}
+
+OpenGL omogućava registriranje funkcija koje će biti aktivirane kad se dogodi neki događaj. Funkcija \textit{myMouse} aktivira se kad god korisnik pritisne tipku miša. U toj funkciji, radi se provjera je li korisnik kliknuo na dvije točke zaredom, te ako jest, iscrtava se pravac između njih Bresenhamovim algoritmom. Kad korisnik klikne unutar prozora prvi put, funkcija zapamti tu točku te čeka idući klik i novu točku kako bi iscrtala pravac.
+
+\item \begin{lstlisting}
+void myKeyboard(unsigned char theKey, int mouseX, int mouseY)
+\end{lstlisting}
+Ovaj se potprogram aktivira kad god se pritisne tipka na tipkovnici. U mom rješenju, pritisak neke od tipki r, g, b i k na tipkovnici mijenja boju kojom se iscrtava pravac. Istovremeno, ova funkcija u gornjem desnom kutu ekrana iscrtava mali pravokutnik s trenutno odabranom bojom. 
+
+\item \begin{lstlisting}
+void myLine(GLint xa, GLint ya, GLint xb, GLint yb)
+\end{lstlisting}
+
+Funkcija \textit{myLine} poziva se iz funkcije \textit{myMouse} a služi iscrtavanju pravca. Prima kao parametre cjelobrojne koordinate početne i konačne točke pravca (ekran je rasterska jedinica i koordinate piksela su isključivo cjelobrojne). Ova funkcija služi pozivanju dviju funkcija koje baš iscrtavaju pojedine pravce. Naime, spomenuto je kako je početni postupak radio isključivo za koeficijente smjera iz intervala $[0,1]$. Prilagodba na veće koeficijente smjera izvršena je jednostavnom idejom. Naime, ako je koeficijent smjera veći od 1, to jest ako je kut nagiba pravca veći od 45\degree , to znači da je kut između pravca i osi y sad manji od 45\degree pa jednostavnim zrcaljenjem crtamo i taj pravac. Za kuteve manje od 0\degree prilagodba je također jednostavna. Zadatak ove funkcije jest upravo detektirati kakav pravac je zadan i na osnovu toga pozivati funkcije zadužene za crtanje pravca s različitim nagibima.
+
+\item \begin{lstlisting}
+void myBresenham0to90(GLint xa, GLint ya, GLint xb, GLint yb) 
+\end{lstlisting}
+Funkcija crta pravac s kutom nagiba od 0\degree  do 90\degree  zadan početnim točkama. Poziva se iz \text{myLine}.
+
+\item \begin{lstlisting}
+void myBresenham270to0(GLint xa, GLint ya, GLint xb, GLint yb) 
+\end{lstlisting}
+
+Slično kao i prethodno, samo što ova funkcija služi za crtanje pravaca s negativnim nagibom. 
+
+\end{enumerate}
+
+U gornjim opisima nisam navodio \textit{main} funkcije jer one uglavnom služe za inicijalizacije i učitavanje nekih parametara sa standardnog ulaza te ih bilo tko može napisati prema svojim potrebama, ako već koristi gore opisane module. 
+\newline \indent
+Problemi ovakvog pristupa jesu klasični problemi proceduralnog programiranja -- krutost, krhkost i općenito teže nadograđivanje. Ilustracije radi, funkcija koja računa inverz matrice mogla je biti napisana fleksibilnije, to jest da računa inverz matrice bilo kakvih dimenzija. Ovako, potreba za invertiranjem matrica bilo koje druge dimenzije rezultirat će potrebom pisanja nove funkcije. Problemi svih ovih potprograma jesu što nisam implementirao provjere za potencijalne pogreške, krivo zadane parametre i ostale stvari što će kod pogrešnog korištenja izazvati greške u izvođenju teške za detektirati, a naročito pogrešne pristupe memoriji (engl. \textit{segfaults}). Brzina izvođenja je jako dobra s obzirom da se radi o nižem jeziku bez pretjeranog kompliciranja s moje strane. 
+
+\chapter {Drugi ciklus vježbi - B varijanta}
+Drugi ciklus laboratorijskih vježbi sastojao se od dva dijela. Prvi dio bio je crtanje i popunjavanje konveksnog poligona, a drugi se bavio učitavanjem, modeliranjem i operacijama na 3D tijelima. 
+\section{Vježba 4}
+U prvome dijelu, dakle kod iscrtavanja poligona, bilo je potrebno korisniku dopustiti da klikanjem miša zadaje vrhove poligona te interaktivno, kako korisnik pomiče miš, iscrtavati poligon. Također, trebalo je korisniku omogućiti da kad želi, pritiskom tipke na tipkovnici promijeni stanje programa te da program više ne iscrtava poligon nego da za nacrtani poligon ispituje odnos točaka i tog poligona. Točke, jasno, zadaje korisnik klikanjem miša. Dodatne opcije bile su pozadinska boja, boja popunjavanja poligona i zabrana crtanja nekonveksnih poligona. Korištene strukture podataka:
+
+\begin{lstlisting}
+typedef struct {
+    int x;
+    int y;
+} Point2D;
+
+typedef struct {
+    int a;
+    int b;
+    int c;
+} Edge2D;
+
+typedef struct {
+    Point2D vertex;
+    Edge2D edge;
+    bool left;
+} PolyElem;
+
+std::vector<PolyElem*> polygon_elements;
+
+GLuint window_width = 300;
+GLuint window_height = 300;
+bool my_state = false;
+bool convex = false;
+bool fill_flag = false;
+
+\end{lstlisting}
+
+Kako bih spremio koordinate točaka, jednadžbe bridova i oznaku je li brid lijevi ili desni (što je važno kod crtanja i određivanja konveksnosti) koristio sam tri strukture. Lista tih struktura predstavlja poligon. Početna veličina prozora i zastavice koje upravljaju programom navedene su ispod. Zastavica my\_state određuje je li program u stanju crtanja poligona ili u stanju ispitivanja odnosa točke i poligona. Zastavica convex određuje može li korisnik zadati bilo kakav vrh, ili isključivo takav vrh koji zadražva konveksnost poligona.  Fill\_flag je zastavica zadužena za određivanje crta li se popunjeni poligon ili se crtaju samo bridovi. 
+
+Struktura je rješenja sljedeća:
+
+\begin{enumerate}
+\item \begin{lstlisting}
+void Display()
+\end{lstlisting}
+Klasična funkcija display koja čisti prikaz i briše elemente poligona, ako su postojali.
+
+\item \begin{lstlisting}
+void Reshape(int width, int height)
+\end{lstlisting}
+
+Reshape funkcija poziva se nakon promjene veličine ekrana. Ona u ovisnosti o zastavicama postavlja potrebne boje i čisti spremnike te postavlja novi pogled.
+
+\item \begin{lstlisting}
+void MouseClick(int button, int state, int x, int y)
+\end{lstlisting}
+
+Funkcija koja biva pozvana na svaki klik miša. Ova funkcija u ovisnosti o stanju čini dvije stvari. Ako je stanje početno, to jest ako se isključivo crta poligon, funkcija provjerava je li zastavica \textit{convex} postavljena. Ako jest, poziva funkciju \textit{CheckIfConvex} koja provjerava narušava li nova točka konveksnost poligona, te ako ne narušava, iscrtava se novi poligon koji ima jedan dodatni vrh. U suprotnom ne iscrtava se ništa i ostavlja stari poligon netaknut. Ako zastavica nije postavljena, funkcija bezuvjetno prihvaća novu točku i crta poligon. U oba slučaja, pozivaju se funkcije  Ako je stanje drugo, to jest ako je zastavica \textit{my\_state} postavljena u jedinicu, funkcija zove funkciju \textit{CheckInPolygon} koja provjerava odnos točke i poligona.
+
+\item \begin{lstlisting}
+void MousePassive(int x, int y)
+\end{lstlisting}
+
+Ova funkcija služi iscrtavanju poligona dok korisnik pomiče miš. Naime, kad korisnik klikne i zada točku, on kako dalje miče pokazivač miša, tako se interaktivno iscrtava poligon s dodatnim vrhom koji ovisi o položaju miša. Naravno, ova funkcija nema nikakav efekt ako je stanje prebačeno u stanje ispitivanja odnosa točke i poligona.
+
+\item \begin{lstlisting}
+void Keyboard(unsigned char key, int mouseX, int mouseY)
+\end{lstlisting}
+
+Ova funkcija aktivira se pritiskom tipki na tipkovnici. Korisnik različitim tipkama miša regulira postavljanje različitih zastavica koje određuju stanje programa, ispunjavanje poligona i boje iscrtavanja.
+
+\item \begin{lstlisting}
+void DrawPolygon(std::vector<PolyElem*>& elements)
+\end{lstlisting}
+
+Funkcija koja služi za crtanje poligona bez popunjavanja istog. Kao parametar, prima listu elemenata poligona te ih iscrtava na ekran koristeći primitiv GL\_LINES.
+
+\item \begin{lstlisting}
+void CalculatePolygonCoeff(std::vector<PolyElem*>& elements)
+\end{lstlisting}
+
+Ova funkcija računa koeficijente jednadžbi bridova poligona i zapisuje ih u elemente poligona te dodatno ispituje je li poligon lijevi ili desni i tu vrijednost zapisuje u posebnu zastavicu.
+
+\item \begin{lstlisting}
+void FillPolygon(std::vector<PolyElem*>& elements)
+\end{lstlisting}
+
+Funkcija crta poligon, ali ga istovremeno i popunjava koristeći postupak za popunjavanje poligona opisan u vježbi.
+
+\item \begin{lstlisting}
+void CheckInPolygon(std::vector<PolyElem*>& elements, int x, int y, int* status)
+\end{lstlisting}
+
+Ova funkcija provjerava odnos točke i poligona te status vraća preko varijable \textit{status}. Status 0 znači da točka nije u poligonu, status 1 znači da je na rubu poligona, a 2 da je u poligonu.
+
+\item \begin{lstlisting}
+bool CheckIfConvex(std::vector<PolyElem*>& elements, int* orientation)
+\end{lstlisting}
+
+Ova funkcija provjerava je li trenutni poligon konveksan. Ona je pomoćna funkcija kod provjera konveksnosti i dozvoljavanja crtanja nekonveksnih poligona.
+
+\end{enumerate}
+
+\section{Vježba 5}
+U ovoj vježbi govorilo se o načinu zadavanja 3D tijela. Istaknuta je nužnost pridržavanja konvencije o orijentaciji vrhova poligona. To je važno kako bi se mogao odrediti odnos točaka i tijela te kako bi se kasnije tijelo moglo iscrtavati. Tijelo smo zadavali preko trokuta, a vrhove smo orijentirali na način da sve normale tijela gledaju u smjeru prema van, u odnosu na centar tijela. Opisano je kako se tijelo zadaje \textbf{.obj} datotekama. Zadatak vježbe bio je modelirati tijelo razredom \textit{ObjectModel}. Taj razred ima sljedeće sučelje:
+
+\begin{lstlisting}
+class ObjectModel {
+public:
+    std::vector<Vertex3D> vertices_;
+    std::vector<Face3D> faces_;      
+    std::vector<Plain3D> coeffs_;
+    ObjectModel(char* filename);
+    ObjectModel(ObjectModel* from);
+    void readIn(char* filename);
+    ObjectModel* copy();
+    void normalize();
+    std::string dumpToObj();
+    void checkPoint(float x, float y, float z, int* status);
+private:
+    void setCoeffs();
+    char* filename_;
+};
+\end{lstlisting}
+
+Strukture podataka koje koristi ovaj razred jesu:
+\begin{lstlisting}
+typedef struct {
+    float a;
+    float b;
+    float c;
+    float d;
+} Plain3D;
+
+typedef struct {
+    float x;
+    float y;
+    float z;
+} Vertex3D;
+
+typedef struct {
+    int v1;
+    int v2;
+    int v3;
+} Face3D;
+
+\end{lstlisting}
+
+U razredu postoje lista vrhova i lista poligona koje mu pripadaju, to jest čine tijelo. Posebno sam stavio i listu jednadžbi ravnina za pojedine poligone koja se izračuna prilikom stvaranja objekta kako bih kasnije lakše baratao tim dijelom i imao gotove zapisane jednadžbe ravnine. Same metode ovog razreda opisane su u nastavku.
+
+\begin{enumerate}
+\item \begin{lstlisting}
+ObjectModel::ObjectModel(char* filename)
+\end{lstlisting}
+Obični konstruktor kojem se predaje ime \textbf{.obj} datoteke iz koje će biti stvoren model tijela.
+
+\item \begin{lstlisting}
+ObjectModel::ObjectModel(ObjectModel* from)
+\end{lstlisting}
+
+Konstruktor koji omogućava da se stvori kopija istog modela objekta iz već postojećeg.
+
+\item \begin{lstlisting}
+void ObjectModel::readIn(char* filename)
+\end{lstlisting}
+
+Metoda koja se poziva iz običnog konstruktora, a koja čita datoteku i sprema podatke u strukture podataka.
+
+
+\item \begin{lstlisting}
+void ObjectModel::setCoeffs()
+\end{lstlisting}
+
+Metoda koja se također poziva iz običnog konstruktora nakon učitavanja, a podešava i zapisuje jednadžbe ravnina kojima pripadaju pojedini poligoni.
+
+
+\item \begin{lstlisting}
+std::string ObjectModel::dumpToObj()
+\end{lstlisting}
+
+Metoda koja zapiše i vrati cijeli objekt kao znakovni niz u formatu identičnom onom ulazne datoteke.
+
+\item \begin{lstlisting}
+ObjectModel* ObjectModel::copy()
+\end{lstlisting}
+
+Metoda koja kopira trenutni model i vraća novi, identičan.
+
+\item \begin{lstlisting}
+void ObjectModel::normalize()
+\end{lstlisting}
+
+Metoda koja služi za normalizaciju točaka tijela, to jest svođenje svih koordinata tijela na interval $[-1,1]$.
+
+\item \begin{lstlisting}
+void ObjectModel::checkPoint(float x, float y, float z, int* status)
+\end{lstlisting}
+
+Metoda koja provjerava odnos točke i tijela te odnos, slično kao funkcija \textit{CheckInPolygon} u prethodnoj vježbi vraća preko statusne varijable.
+
+\end{enumerate}
+
+U ovom ciklusu vježbi načinjene su pripreme za iduće cikluse u kojima se iscrtavaju i bojaju tijela te je izložena i provježbana ideja crtanja i bojanja konveksnog poligona. Postoje poneki nedostaci u mom modelu što se tiče struktura podataka koje sam koristio -- možda bespotrebna lista koeficijenata ravnina, ali generalno sam njime zadovoljan. Brzina rada je dobra. 
+
+
+\chapter{Treći ciklus vježbi - A varijanta}
+Tema ovoga ciklusa vježbi bilo je iscrtavanje žične forme tijela pomoću modela iz prethodne vježbe. Prije toga, trebalo je napraviti transformacije i perspektivne projekcije u ovisnosti o zadanom očištu i gledištu kako bi se tijelo prije iscrtavanja ispravno pozicioniralo u sustav prikaza. Dodatno, u drugom dijelu, trebalo je iscrtavati Bezierove krivulje za zadane parametre te pokušati simulirati iscrtavanje tijela ako se očište pomiče po takvoj krivulji i to uz uklanjanje stražnih poligona.
+
+\section{Vježba 5}
+
+U ovoj vježbi, bilo je potrebno iscrtavati žičnu formu tijela učitanog iz datoteke. Prije iscrtavanja tijela, učitavale su se koordinate očišta i gledišta te izvršavale transformacije pogleda i perspektivna projekcije nad tijelom. U ovoj vježbi, koristio sam identične strukture podataka kao u prethodnom ciklusu, uz dodatne funkcije za transformacije i projekcije koje opisujem u nastavku.
+
+\begin{enumerate}
+\item \begin{lstlisting}
+void MakeRotateMatrixY(float sin_alpha, float cos_alpha, float** T);
+\end{lstlisting}
+Ova funkcija stvara matricu rotacije za kut $\alpha$ oko osi y.
+
+\item \begin{lstlisting}
+void MakeRotateMatrixZ(float sin_alpha, float cos_alpha, float** T);
+\end{lstlisting}
+Isto kao i prethodna, i ova funkcija stvara matricu rotacije, samo oko osi Z.
+
+\item \begin{lstlisting}
+void MakeTranslateMatrix(float x, float y, float z, float** T);
+\end{lstlisting}
+
+Ova funkcija stvara matricu translacije kojoj se kao parametri predaju iznosi translacije.
+
+\item \begin{lstlisting}
+void MakeTransform(MyVector eye, MyVector center, float** MatrixViewT,
+ float** MatrixProjectionT);
+\end{lstlisting}
+
+Funkcija stvara ukupnu transformacijsku matricu. Kao parametri, zadaju joj se koordinate očišta i gledišta, a ona vrać ModelView i Projection matricu. Koristi prethodno nabrojane tri funkcije kao pomoćne. Parametar tipa \textit{MyVector} je struktura ista kao u prvoj vježbi samo preimenovana radi lakšeg snalaženja.
+\newline
+\item \begin{lstlisting}
+void Transform(ObjectModel* o, float* Matrix)
+\end{lstlisting}
+
+Nakon što se dobijene transformacijske matrice međusobno izmnože, funkcija \textit{Transform} prima učitani model tijela i transformacijsku matricu te nad svakim vrhom tijela primjenjuje tu transformaciju. Nakon toga, tijelo se iscrtava.
+
+
+\end{enumerate}
+
+\section{Vježba 6}
+U ovoj vježbi, zadatak je bio napraviti iscrtavanje Bezierove krivulje zadane Bernsteinovim težinskim funkcijama. Usto, trebalo je načiniti animaciju iscrtavanja tijela uz uklanjanje stražnjih ako se očište pomiče po takvoj krivulji. Većinom sam koristio praktički iste stvari kao u prethodnoj vježbi uz dodatne funkcije za iscrtavanje Bezierove krivulje i animaciju pomicanja očišta. Dodatne strukture podataka korištene u vježbi:
+
+\begin{lstlisting}
+std::vector<Point3D> points;
+std::vector<Point3D> bezierPoints;
+ObjectModel* original;
+\end{lstlisting}
+
+Koristim listu ulaznih točaka koje određuju krivulju i listu dobijenih točaka krivulje te posebno spremam ulazni objekt iz razloga da bih ga imao sačuvanog za svaki novi korak animacije. Naime, svaki korak animacije treba stvoriti novi transformirani objekt i iscrtati ga, a zbog toga je onaj prvotno učitani potrebno spremiti. Funkcije opisujem u nastavku.
+
+\begin{enumerate}
+\item \begin{lstlisting}
+void computeFactors(std::vector<int>& factors)
+\end{lstlisting}
+
+Ova funkcija računa faktore potrebne za kasnije izračunavanje točaka Bezierove krivulje. Oni se računaju preko binomnih koeficijenata i to samo jednom, na početku postupka.
+
+\item \begin{lstlisting}
+void calculateBezier(std::vector<Point3D>& points)
+\end{lstlisting}
+
+Ova funkcija izračunava točke Bezierove krivulje na osnovu ulaznih točaka. Poziva funkciju \textit{computeFactors} na početku postupka, a rezultate sprema u gore iznad prikazanu listu.  
+
+
+\item \begin{lstlisting}
+void drawBezier(std::vector<Point3D>& points)
+\end{lstlisting}
+Ova funkcija na osnovu točaka crta Bezierovu krivulju koristeći primitiv GL\_LINE\_LOOP.
+
+
+\item \begin{lstlisting}
+ObjectModel* TransformCopy(ObjectModel* o, float* Matrix)
+\end{lstlisting}
+
+Ova funkcija na osnovu modela koji joj se zada kao prvi parametar i transformacijske matrice vraća novi model s transformiranim vrhovima. To sam koristio kako bih originalno tijelo sačuvao.
+\newline
+\newline
+
+\item \begin{lstlisting}
+ObjectModel* removePolygons(ObjectModel* original) {
+\end{lstlisting}
+
+Funkcija \textit{removePolygons} ima za zadatak iz modela ukloniti stražnje poligone kako bi se on mogao ispravno iscrtati.
+
+\item \begin{lstlisting}
+void animateSceneEyeMovement()
+\end{lstlisting}
+
+U ovoj funkciji radim animaciju pomicanja očišta tijela po točkama Bezierove krivulje. Nakon što se iscrta Bezierova krivulja te nakon početnog iscrtavanja tijela, poziva se ova funkcija koja onda pomiče očište po krivulji, poziva funkcije za ponovno računanje transformacija i iscrtava tako dobijeno tijelo.
+
+\end{enumerate}
+
+Performanse koda u ovom ciklusu su prilično dobre, čak i za objekte koji imaju jako puno poligona. Animacije rade bez ikakvih trzaja ili usporavanja. Naravno, ima dosta problema, i vjerojatno bi bilo bolje sve te silne funkcije spakirati u određene razrede koji bi se bavili pojedinim zadacima što bi poboljšalo enkapsulaciju i nadogradnju.
+
+\chapter{Četvrti ciklus vježbi - A varijanta}
+U ovom ciklusu vježbi, bila su dva zadatka. Prvi je bio iscrtati tijelo uz sjenčanje njegovih poligona, a drugi crtanje fraktala, zanimljivih tvorevina. 
+
+\section{Vježba 7}
+Vježba 7 kao zadatak nosila je uklanjanje i sjenčanje stražnjih poligona. Uklanjanje stražnjih poligona provodilo se jednostavnom metodom. Naime, ispituje se odnos očišta i poligona. Ako je očište ispod poligona, poligon nije vidljiv, a u suprotnom jest. Ovaj postupak pretpostavlja konveksnost tijela. Postupak sjenčanja trebalo je izvesti na dva načina, konstantnim i Gouraudovim sjenčanjem. Dodatna sitnica je da sam izmijenio \text{ObjectModel} tako da sam u strukturu svakog vrha i poligona dodao iznos intenziteta koji se pamti zbog crtanja. Tako sad oni izgledaju ovako:
+
+
+\begin{lstlisting}
+typedef struct {
+    float x;
+    float y;
+    float z;
+    float intensity;
+} Vertex3D;
+
+typedef struct {
+    int v1;
+    int v2;
+    int v3;
+    float intensity;
+} Face3D;
+\end{lstlisting}
+
+ U ovom dijelu vježbe, koristim samo četiri dodatne funkcije, sve ostalo je iz prethodnih vježbi.
+
+\begin{enumerate}
+\item \begin{lstlisting}
+void constantColoredScene()
+\end{lstlisting}
+
+Ova funkcija zadužena je za iscrtavanje poligona konstantnim sjenčanjem. Funkcija uzima normalu pojedinog poligona kao referentnu te na osnovu središta poligona i vektora prema izvoru računa difuznu komponentu te ju pribraja ambijentalnoj. Tako se dobija intenzitet poligona na osnovu kojeg se zatim iscrtava tijelo.
+
+\item \begin{lstlisting}
+void gouraudColoredScene()
+\end{lstlisting}
+
+Ova funkcija radi praktički istu stvar kao gornja samo za gouraudovo sjenčanje kod kojeg se računaju srednje normale u vrhovima pa se zatim intenziteti preko njih interpoliraju na poligon omeđen tim vrhovima.
+
+\item \begin{lstlisting}
+void drawConstantColoredBody(ObjectModel* o)
+\end{lstlisting}
+
+Funkcija crta konstatno osjenčano tijelo.
+
+\item \begin{lstlisting}
+void drawGouraudColoredBody(ObjectModel* o)
+\end{lstlisting}
+
+Funkcija crta tijelo osjenčano Gouraudovim sjenčanjem. Primarna razlika ove funkcije i prethodne je u zadavanju intenziteta prilikom crtanja i u tome gdje su intenziteti pohranjeni. Kod prve, pohranjeni su u svakom poligonu, a kod druge u svakom vrhu modela.
+
+
+\end{enumerate}
+
+\section{Vježba 8}
+
+U ovoj vježbi trebalo je nacrtati dvije vrste fraktala -- Mandelbrotov i Julijin fraktal. Oba su fraktala slična i dobijaju se na osnovu iste formule uz sitne korekcije. U oba zadatka, radi se preslikavanje s rasterske prikazne jedinice na kompleksnu ravninu. Za svaku točku prikazne jedinice, računa se konvergira li formula \ref{jed1}. Kod računanja Mandelbrotovog skupa, $c$ je broj dobijen preslikavanjem koordinate trenutno analiziranog piksela u kompleksnu ravninu, dok za računanje Julijinog skupa zadajemo c unaprijed, a za svaku koordinatu ekrana računamo $z_{0}$.
+
+
+\begin{equation} \label{jed1}
+z_{n+1} = z_{n}^{2} + c
+\end{equation}
+
+Funkcije koje koristim za crtanje Mandelbrotovog fraktala jesu sljedeće:
+
+\begin{enumerate}
+\item \begin{lstlisting}
+int DivergenceTest(complex c, double epsilon, int limit)
+\end{lstlisting}
+
+Ova funkcija izračunava da li za trenutni kompleksni broj c formula\ref{jed1} konvergira. Naravno, s obzirom da se tom formulom može generirati beskonačan niz brojeva, funkciju moramo ograničiti na maksimalan broj iteracija. Usto, funkciji zadajemo prag. Ako u bilo kojoj iteraciji, rezultat formule postane veći od praga, skup ne konvergira i funkcija vraća broj iteracije u kojoj je to otkrila. Ako za trenutni broj c jednadžba konvergira, funkcija će, nakon što prođe maksimalni broj iteracija, vratiti -1.
+
+\item \begin{lstlisting}
+void ColorScheme(int n)
+\end{lstlisting}
+
+Ova funkcija služi da na osnovu cijelog broja odredi boju kojom će se iscrtavati slika na ekran. U ovom konkretnom slučaju, za svaki slikovni element određuje boju.
+
+
+\item \begin{lstlisting}
+void RenderScene()
+\end{lstlisting}
+
+Ova funkcija iscrtava sami fraktal. Za svaku koordinatu zaslona, računa njegovu presliku na kompleksnu ravninu te pomoću funkcije \textit{DivergenceTest} računa boju kojom će obojati trenutnu točku. Naime, funkcija \textit{DivergenceTest} vraća ili -1 ili broj iteracije u kojoj je otkrila divergenciju. Na osnovu tog broja, određuje se boja fraktala funkcijom \textit{ColorScheme}.
+
+\end{enumerate}
+
+Za crtanje Julijinog fraktala koriste se iste funkcije, samo što je funkcija \textit{DivergenceTest} izmijenjena kako bi na pravi način računala divergenciju, te izgleda ovako:
+
+\begin{enumerate}
+\item \begin{lstlisting}
+int DivergenceTest(complex z0, complex c, double epsilon, int limit)
+\end{lstlisting}
+\end{enumerate}
+
+U ovom ciklusu vježbi, koristio sam većinom već postojeće stvari u prvom dijelu uz dodatak funkcija za sjenčanje. Stoga su performanse ostale praktički iste i brzina je jako dobra, čak i kod velikih objekata. Fraktali su ispali iznenađujuće jednostavni i zabavni za crtanje te tu ne vidim neke probleme.
+
+
+\end{document}
